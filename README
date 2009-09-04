@@ -1,0 +1,19 @@
+I needed a very simple json parser to run on older blackberry JVMs.
+
+All the json parsers I could find required lots of huge jars or Java 5 classes.
+
+You just call handleStream on this object and then look at either rootTable or rootVector.
+
+If your json looks like:
+
+["foo1", "foo2"]
+
+Then rootTable will be null and rootVector will have the data.
+
+If your json looks like:
+
+{"foo1": "foo2"}
+
+Then rootTable will have the data and rootVector will be null.
+
+
